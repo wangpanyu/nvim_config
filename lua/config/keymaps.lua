@@ -18,7 +18,7 @@ map("n", "<A-k>", "<C-w>k", opt)
 map("n", "<A-l>", "<C-w>l", opt)
 
 -- nvim-tree
-map("n", "<A-m>", ":NvimTreeToggle:<CR>", opt)
+map("n", "<A-t>", ":NvimTreeToggle:<CR>", opt)
 
 -- terminal
 map("n", "<leader>t", ":sp|terminal<CR>", opt)
@@ -65,3 +65,12 @@ map("n", "sv", ":vsp<CR>", opt)
 map("n", "sh", ":sp<CR>", opt)
 -- 关闭当前
 map("n", "sc", "<C-w>c", opt)
+
+-- markdown分屏预览
+
+vim.keymap.set(
+  "n",
+  "<leader>m",
+  ":silent !osascript /home/wpy/.config/nvim/scripts/mkdp_windowSplit.sh<cr>:MarkdownPreview<cr>",
+  { desc = "markdown preview", remap = true, silent = true }
+)
